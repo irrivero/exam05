@@ -1,0 +1,27 @@
+Subject: vbc
+Files to turn: *.c, *.h
+Functions allowed: malloc, calloc, realloc, free, printf, isdigit, write
+
+Program: print the result of a math expression given as argument
+- Handle + * and parenthesis
+- Don't handle whitespaces
+- All the values in the expression will be between 0 and 9 included
+- In case of unexpected symbol, print "Unexpected token '%c'\n" and exit code 1.
+    If the symbol is in the end of the input: "Unexpected end of input\n".
+- In case of syscall failure -exit code 1
+
+Examples:
+-------------
+./vbc '1'
+1
+
+./vbc '2+3'
+5
+
+./vbc '3*4+5'
+17
+
+./vbc '(3+4)*5'
+35
+
+....
