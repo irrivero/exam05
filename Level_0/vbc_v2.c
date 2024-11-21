@@ -60,12 +60,12 @@ int parse_term(Parser *p) {
 
 // Función para procesar factores (maneja números y paréntesis)
 int parse_factor(Parser *p) {
-    if (p->expr[p->pos] == '(') {
+    if (p->expr[p->pos] == '(') 
+    {
         p->pos++; // Saltar '('
         int result = parse_expr(p);
-        if (p->expr[p->pos] != ')') {
+        if (p->expr[p->pos] != ')')
             unexpected_token(p);
-        }
         p->pos++; // Saltar ')'
         return result;
     } else if (isdigit(p->expr[p->pos])) {
@@ -85,7 +85,7 @@ void unexpected_token(Parser *p) {
     } else {
         //char buffer[50];
         //int len =
-		write(2, "Unexpected token '", 17);
+		write(2, "Unexpected token '", 18);
 		write(2, &p->expr[p->pos], 1);
 		write(2, "'\n", 2);
 		//printf("Unexpected token '%c'\n", p->expr[p->pos]);
