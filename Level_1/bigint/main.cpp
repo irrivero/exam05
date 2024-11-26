@@ -1,5 +1,5 @@
 #include "bigint.hpp"
-#include <iostream>
+//#include <iostream>
 
 int main()
 {
@@ -13,6 +13,7 @@ int main()
     std::cout << "e = " << e << std::endl;
     std::cout << "a + b = " << a + b << std::endl;
     std::cout << "(c+= a) = " << (c += a) << std::endl;
+    std::cout << "c - a = " << c - a << std::endl;
     std::cout << "b = " << b << std::endl;
     std::cout << "++b = " << ++b << std::endl;
     std::cout << "b++ = " << b++ << std::endl;
@@ -21,6 +22,13 @@ int main()
     std::cout << "(d >>= 2) = " << (d >>= 2) << std::endl;
     std::cout << "a = " << a << std::endl;
     std::cout << "d = " << d << std::endl;
+    bigint f("42");
+    std::cout << "f = " << f << std::endl;
+    std::cout << "a == f = " << (a == f) << std::endl;
+    std::cout << "a <= f = " << (a <= f) << std::endl;
+    std::cout << "a >= f = " << (a >= f) << std::endl;
+    std::cout << "a < f = " << (a < f) << std::endl;
+    std::cout << "a > f = " << (a > f) << std::endl;
     std::cout << "(d < a) = " << (d < a) << std::endl;
     std::cout << "(d > a) = " << (d > a) << std::endl;
     std::cout << "(d == a) = " << (d == a) << std::endl;
