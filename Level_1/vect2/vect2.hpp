@@ -6,7 +6,8 @@ private:
 
 public:
     vect2(int x = 0, int y = 0) : x(x), y(y) {};
-    vect2(const vect2& oth) : x(oth.x), y(oth.y) {};
+    
+	vect2(const vect2& oth) : x(oth.x), y(oth.y) {};
 
     vect2& operator=(const vect2& oth) {
         x = oth.x;
@@ -91,14 +92,14 @@ public:
         return *this;
     }
 
-    friend vect2 operator*(int s, const vect2& v) {
-        return vect2(v.x * s, v.y * s);
-    }
-
     vect2& operator*=(int s) {
         x *= s;
         y *= s;
         return *this;
+    }
+
+    friend vect2 operator*(int s, const vect2& v) {
+        return vect2(v.x * s, v.y * s);
     }
 
 };
