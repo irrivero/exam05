@@ -65,6 +65,10 @@ public:
         return num < oth.num;
     }
 
+	bool operator>(const bigint& oth) const {
+        return !(*this < oth);
+    }
+
     bool operator==(const bigint& oth) const {
         return num == oth.num;
     }
@@ -85,4 +89,26 @@ public:
         (void) oth;
         return bigint();
 	}
+
+	    bigint operator<<(size_t shift) const {
+        return bigint(num + std::string(shift, '0'));
+    }
+
+    bigint& operator<<=(size_t shift) {
+        num += std::string(shift, '0');
+        return *this;
+    }
+
+    bigint& operator>>=(const bigint& b) {
+        if (bigint(num.size()) <= b)
+            num = "0";
+        else {
+            bigint i(0);
+            while (i < b) {
+                num = num.substr(0, num.size() - 1);
+                ++i;
+            }
+        }
+        return *this;
+    }
 };
