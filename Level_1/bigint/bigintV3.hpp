@@ -90,7 +90,7 @@ public:
         return bigint();
 	}
 
-	    bigint operator<<(size_t shift) const {
+	bigint operator<<(size_t shift) const {
         return bigint(num + std::string(shift, '0'));
     }
 

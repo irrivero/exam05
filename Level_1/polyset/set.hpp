@@ -6,7 +6,7 @@ class set {
 		searchable_bag &bag;
 	public:
 		set(searchable_bag &bg) : bag(bg) {}
-		set(const set &other) : bag(other.bag) {}
+		~set() {}
 		void insert(int item) {
 			if (!bag.has(item))
 				bag.insert(item);
