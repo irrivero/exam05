@@ -32,7 +32,7 @@ class vect2 {
         os << "{" << v[0] << ", " << v[1] << "}";
         return os;
     }
-
+ 
     vect2 operator++(int) {
         vect2 tmp = *this;
         x++;
