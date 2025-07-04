@@ -15,7 +15,7 @@ class bigint {
 	bigint(const std::string& n) {
     	if (n.empty() || \
 		!std::all_of(n.begin(), n.end(), ::isdigit) || \
-		(n.size() > 1 && n[0] == '0')) {
+		(n.size() > 1 && n[0] == '0')) { 
         	std::cout << "Invalid number string" << std::endl;
         	num = "0";
     	}
